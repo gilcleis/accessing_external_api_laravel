@@ -35,11 +35,14 @@ class Playground extends Command
         $service = new SportScoreService();
 
         $response = $service
-            ->sports()
+            ->teams()
+            ->fromSport(1)
             ->get();
-        
 
-        dd($sport1);
+        foreach ($response as $dado ){
+            echo $dado->name.PHP_EOL;
+        }
+        // dd($response);
         return Command::SUCCESS;
     }
 }
