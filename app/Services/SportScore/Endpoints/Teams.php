@@ -7,15 +7,10 @@ use App\Services\SportScore\Entities\Team;
 use App\Services\SportScore\SportScoreService;
 use Illuminate\Support\Collection;
 
-class Teams
+class Teams extends BaseEndpoint
 {
-    private SportScoreService $service;
     private ?int $sportId;
 
-    public function __construct()
-    {
-        $this->service = new SportScoreService();
-    }
 
     public function fromSport(int|Sport $sport): static
     {
@@ -32,11 +27,5 @@ class Teams
                 ->json('data'),
             Team::class
         );
-    }
-
-    private function transform(mixed $json): Collection
-    {
-        return collect($json)
-            ->map(fn ($team) => new Team($team));
     }
 }
