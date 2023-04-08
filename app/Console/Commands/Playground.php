@@ -39,10 +39,10 @@ class Playground extends Command
             ->fromSport(1)
             ->get();
 
-        foreach ($response as $dado ){
-            echo $dado->name.PHP_EOL;
-        }
-        // dd($response);
+        // foreach ($response as $dado ){
+        //     echo $dado->name.PHP_EOL;
+        // }
+        dd($response);
         return Command::SUCCESS;
     }
 }

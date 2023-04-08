@@ -12,7 +12,7 @@ class Sports extends BaseEndpoint
     {
         return $this->transform(
             $this->service
-                ->api
+                ->refreshToken()
                 ->get('/sports')
                 ->json('data'),
             Sport::class

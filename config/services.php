@@ -33,6 +33,7 @@ return [
 
     'sport_score' => [
         'key' => env('SPORT_SCORE_KEY'),
+        'host' => env('SPORT_SCORE_HOST'),
         'baseUrl' => env('SPORT_SCORE_BASE_URL'),
     ],
 
