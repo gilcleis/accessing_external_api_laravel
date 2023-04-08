@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'sport_score' => [
+        'key' => env('SPORT_SCORE_KEY'),
+        'baseUrl' => env('SPORT_SCORE_BASE_URL'),
+    ],
+
+
 ];

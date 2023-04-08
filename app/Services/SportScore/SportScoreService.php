@@ -20,8 +20,8 @@ class SportScoreService
     public function __construct()
     {
         $headers = [
-            'X-RapidAPI-Key' => 'fec0a80510msh243e842907fc71ap1f0ef3jsn32f184f6f2c1',
-            'X-RapidAPI-Host' => 'sportscore1.p.rapidapi.com'
+            'X-RapidAPI-Key' => config('services.sport_score.key'),
+            'X-RapidAPI-Host' => config('services.sport_score.baseUrl')
         ];
         $this->api = Http::withHeaders($headers)
         ->baseUrl('https://sportscore1.p.rapidapi.com');
