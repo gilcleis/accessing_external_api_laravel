@@ -2,7 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Services\SportScore\Endpoints\HasSports;
+use App\Services\SportScore\Entities\Sport;
+use App\Services\SportScore\SportScoreService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Http;
 
 class Playground extends Command
 {
@@ -11,14 +15,14 @@ class Playground extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'play';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Playground command';
 
     /**
      * Execute the console command.
@@ -27,6 +31,15 @@ class Playground extends Command
      */
     public function handle()
     {
+
+        $service = new SportScoreService();
+
+        $response = $service
+            ->sports()
+            ->get();
+        
+
+        dd($sport1);
         return Command::SUCCESS;
     }
 }
